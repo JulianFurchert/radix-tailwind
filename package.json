@@ -1,0 +1,7 @@
+{
+  "name": "radix-tailwind",
+  "workspaces": [
+    "packages/component-library",
+    "packages/website"
+  ]
+}
