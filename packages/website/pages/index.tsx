@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { TestComponent } from 'component-library'
+import { Accordion } from 'component-library'
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +14,28 @@ const Home: NextPage = () => {
         <h1>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <TestComponent example='Test' />
+        <Accordion.Root type="single" collapsible>
+          <Accordion.Item value="item-1">
+            <Accordion.Header>
+              <Accordion.Trigger>
+                Is it accessible?
+              </Accordion.Trigger>
+            </Accordion.Header>
+            <Accordion.Content>
+              Yes. It adheres to the WAI-ARAI design pattern.
+            </Accordion.Content>
+          </Accordion.Item>
+          <Accordion.Item value="item-2">
+            <Accordion.Header>
+              <Accordion.Trigger>
+                Is it accessible?
+              </Accordion.Trigger>
+            </Accordion.Header>
+            <Accordion.Content>
+              Yes. It adheres to the WAI-ARAI design pattern.
+            </Accordion.Content>
+          </Accordion.Item>
+        </Accordion.Root>
       </main>
     </div>
   )
