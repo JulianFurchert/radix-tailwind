@@ -11,8 +11,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        <h1 className="text-xl text-orange-400">
+          Hello world!
         </h1>
         <Accordion.Root type="single" collapsible>
           <Accordion.Item value="item-1">

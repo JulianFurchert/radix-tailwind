@@ -8,7 +8,7 @@ const Item: React.FC<Accordion.AccordionItemProps> = props => {
 }
 
 const Header: React.FC<Accordion.AccordionHeaderProps> = props => {
-  return <Accordion.Header {...props} />
+  return <Accordion.Header className="text-2xl font-bold" {...props} />
 }
 
 const Trigger: React.FC<Accordion.AccordionTriggerProps> = props => {
@@ -16,7 +16,7 @@ const Trigger: React.FC<Accordion.AccordionTriggerProps> = props => {
 }
 
 const Content: React.FC<Accordion.AccordionContentProps> = props => {
-  return <Accordion.Content {...props} />
+  return <Accordion.Content className="text-xl text-blue-500" {...props} />
 }
 
 export { Root, Item, Header, Trigger, Content }

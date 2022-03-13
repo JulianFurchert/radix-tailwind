@@ -3,5 +3,8 @@
   "workspaces": [
     "packages/component-library",
     "packages/website"
-  ]
+  ],
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  }
 }
