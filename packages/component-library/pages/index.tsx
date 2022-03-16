@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Accordion } from 'component-library'
-import { Slider } from 'component-library'
+import { Accordion } from '../src'
+import { Slider } from '../src'
 
 const Home: NextPage = () => {
   return (
@@ -43,7 +43,13 @@ const Home: NextPage = () => {
           <h2 className="text-xl text-gray-600">
             Slider
           </h2>
-          <Slider.Root>
+          <Slider.Root className='w-[400px]'>
+            <Slider.Track>
+              <Slider.Range />
+            </Slider.Track>
+            <Slider.Thumb />
+          </Slider.Root>
+          <Slider.Root orientation='vertical'>
             <Slider.Track>
               <Slider.Range />
             </Slider.Track>

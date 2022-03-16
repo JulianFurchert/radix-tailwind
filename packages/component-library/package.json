@@ -10,6 +10,7 @@
     "build": "microbundle --jsx React.createElement && npm run build-tailwind",
     "build-tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/tailwind.css --minify",
     "dev": "microbundle watch --jsx React.createElement",
+    "next-dev": "next dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -21,15 +22,18 @@
   "devDependencies": {
     "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.13",
-    "autoprefixer": "^10.4.2",
+    "autoprefixer": "^10.4.4",
     "microbundle": "^0.14.2",
-    "postcss": "^8.4.8",
+    "postcss": "^8.4.12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "tailwindcss": "^3.0.23",
     "typescript": "^4.6.2"
   },
   "dependencies": {
-    "@radix-ui/react-accordion": "^0.1.6"
+    "@radix-ui/react-accordion": "^0.1.6",
+    "@radix-ui/react-slider": "^0.1.4",
+    "next": "^12.1.0",
+    "tailwind-merge": "^1.2.0"
   }
 }
