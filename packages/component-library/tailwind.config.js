@@ -1,3 +1,6 @@
+const plugin = require('tailwindcss/plugin')
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   mode: "jit",
   content: [
@@ -5,7 +8,19 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: colors.indigo,
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addVariant }) {
+      addVariant('data-vertical', '&[data-orientation="vertical"]')
+      addVariant('data-horizontal', '&[data-orientation="horizontal"]')
+      addVariant('data-checked', '&[data-state="checked"]')
+      addVariant('data-active', '&[data-state="active"]')
+      addVariant('data-inactive', '&[data-state="inactive"]')
+    })
+  ]
 }

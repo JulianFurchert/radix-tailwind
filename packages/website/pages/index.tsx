@@ -23,7 +23,7 @@ const Home: NextPage = () => {
                   Is it accessible?
                 </Accordion.Trigger>
               </Accordion.Header>
-              <Accordion.Content className="text-blue-300">
+              <Accordion.Content className="text-primary-300">
                 Yes. It adheres to the WAI-ARAI design pattern.
               </Accordion.Content>
             </Accordion.Item>
