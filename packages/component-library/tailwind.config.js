@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: colors.indigo,
+        primary: colors.blue,
       }
     },
   },
@@ -21,6 +21,8 @@ module.exports = {
       addVariant('data-checked', '&[data-state="checked"]')
       addVariant('data-active', '&[data-state="active"]')
       addVariant('data-inactive', '&[data-state="inactive"]')
+      addVariant('data-open', '&[data-state="open"]')
+      addVariant('data-open-child', '[data-state="open"] &')
     })
   ]
 }

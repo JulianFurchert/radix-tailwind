@@ -1,6 +1,10 @@
+import React from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Accordion, Slider, Switch, Tabs, Dialog, Tooltip, Popover, Hovercard } from '../src'
+import { Accordion, Slider, Switch, Tabs, Dialog, Tooltip, Popover, Hovercard, Button, Select, Checkbox, RadioGroup, NavigationMenu, Input } from '../src'
+import { BeakerIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/solid'
+import { MailIcon } from '@heroicons/react/outline'
+// import * as Select from '@radix-ui/react-select';
 
 const Home: NextPage = () => {
   return (
@@ -11,33 +15,239 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='max-w-5xl mx-auto'>
+        
+        <Block title="Button">
+          <Button className='mr-2'>
+            Sign up for free
+          </Button>
+          <Button variant='primary' className='mr-2'>
+            Sign up for free
+          </Button>
+          <Button variant='warning' className='mr-2'>
+            Warning
+          </Button>
+          <Button variant='danger' className='mr-2'>
+            Error
+          </Button>
+        </Block>
+
+        <Block title="Input">
+          <Input.Root className='mb-2'>
+            <Input.Field placeholder='test' />
+            <Input.TrailingIcon>
+            <MailIcon className='w-4 h-4 text-gray-500' />
+            </Input.TrailingIcon>
+          </Input.Root>
+
+          <Input.Root className='mb-2'>
+            <Input.LeadingIcon>
+              <MailIcon className='w-4 h-4 text-gray-500' />
+            </Input.LeadingIcon>
+            <Input.Field />
+          </Input.Root>
+
+          <Input.Root className='mb-2'>
+            <Input.Field />
+          </Input.Root>
+        </Block>
+
+        <Block title="Radiogroup">
+          <RadioGroup.Root>
+            <label className='flex items-center my-2 gap-2'>
+              <RadioGroup.Item value='item-1'>
+                <RadioGroup.Indicator />
+              </RadioGroup.Item>
+              <span>Item 1</span>
+            </label>
+            <label className='flex items-center my-2 gap-2'>
+              <RadioGroup.Item value='item-2'>
+                <RadioGroup.Indicator />
+              </RadioGroup.Item>
+              <span>Item 2</span>
+            </label>
+          </RadioGroup.Root>
+        </Block>
+
+        <Block title="Select">
+          <Select.Root defaultValue="blueberry">
+            <Select.Trigger aria-label="Food">
+              <Select.Value />
+              <Select.Icon />
+            </Select.Trigger>
+
+            <Select.Content>
+              <Select.ScrollUpButton>
+                <ChevronUpIcon className='w-5 h-5' />
+              </Select.ScrollUpButton>
+              <Select.Viewport>
+                <Select.Group>
+                  <Select.Label>Fruits</Select.Label>
+                  <Select.Item value="apple">
+                    <Select.ItemText>Apple</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                  <Select.Item value="banana">
+                    <Select.ItemText>Banana</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                  <Select.Item value="blueberry">
+                    <Select.ItemText>Blueberry</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                  <Select.Item value="grapes">
+                    <Select.ItemText>Grapes</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                  <Select.Item value="pineapple">
+                    <Select.ItemText>Pineapple</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                </Select.Group>
+
+                <Select.Separator />
+
+                <Select.Group>
+                  <Select.Label>Vegetables</Select.Label>
+                  <Select.Item value="aubergine">
+                    <Select.ItemText>Aubergine</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                  <Select.Item value="broccoli">
+                    <Select.ItemText>Broccoli</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                  <Select.Item value="carrot" disabled>
+                    <Select.ItemText>Carrot</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                  <Select.Item value="courgette">
+                    <Select.ItemText>Courgette</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                  <Select.Item value="leek">
+                    <Select.ItemText>leek</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                </Select.Group>
+
+                <Select.Separator />
+
+                <Select.Group>
+                  <Select.Label>Meat</Select.Label>
+                  <Select.Item value="beef">
+                    <Select.ItemText>Beef</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                  <Select.Item value="chicken">
+                    <Select.ItemText>Chicken</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                  <Select.Item value="lamb">
+                    <Select.ItemText>Lamb</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                  <Select.Item value="pork">
+                    <Select.ItemText>Pork</Select.ItemText>
+                    <Select.ItemIndicator/>
+                  </Select.Item>
+                </Select.Group>
+              </Select.Viewport>
+              <Select.ScrollDownButton>
+                <ChevronDownIcon className='w-5 h-5' />
+              </Select.ScrollDownButton>
+            </Select.Content>
+          </Select.Root>
+        </Block>
+
+        <Block title="NavigationMenu">
+          <NavigationMenu.Root>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Trigger>Item one</NavigationMenu.Trigger>
+                <NavigationMenu.Content className='bg-blue-500'>Item one content</NavigationMenu.Content>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Trigger>Item two</NavigationMenu.Trigger>
+                <NavigationMenu.Content>Item two content</NavigationMenu.Content>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+
+            {/* NavigationMenu.Content will be rendered here when active */}
+            <NavigationMenu.Viewport className='bg-red-500' />
+          </NavigationMenu.Root>
+        </Block>
+
+        <Block title="NavigationMenu with submenu">
+          <NavigationMenu.Root>
+            <NavigationMenu.List>
+              <NavigationMenu.Item>
+                <NavigationMenu.Trigger>Item one</NavigationMenu.Trigger>
+                <NavigationMenu.Content>Item one content</NavigationMenu.Content>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Trigger>Item two</NavigationMenu.Trigger>
+                <NavigationMenu.Content>
+                  <NavigationMenu.Sub defaultValue="sub1">
+                    <NavigationMenu.List>
+                      <NavigationMenu.Item value="sub1">
+                        <NavigationMenu.Trigger>Sub item one</NavigationMenu.Trigger>
+                        <NavigationMenu.Content>
+                          Sub item one content
+                        </NavigationMenu.Content>
+                      </NavigationMenu.Item>
+                      <NavigationMenu.Item value="sub2">
+                        <NavigationMenu.Trigger>Sub item two</NavigationMenu.Trigger>
+                        <NavigationMenu.Content>
+                          Sub item two content
+                        </NavigationMenu.Content>
+                      </NavigationMenu.Item>
+                    </NavigationMenu.List>
+                  </NavigationMenu.Sub>
+                </NavigationMenu.Content>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+          </NavigationMenu.Root>
+        </Block>
+
+
+
+        <Block title="Checkbox">
+          <Checkbox.Root>
+            <Checkbox.Indicator />
+          </Checkbox.Root>
+        </Block>
+
         <Block title="Accordion">
           <Accordion.Root type="single" collapsible>
-            <Accordion.Item value="item-1">
-              <Accordion.Header>
-                <Accordion.Trigger>
-                  Is it accessible?
+            <Accordion.Item value="question-a">
+                <Accordion.Trigger className='flex content-between items-center w-[100%]'>
+                  <div className='flex-grow text-left'>
+                    Question A
+                  </div>
+                  <ChevronDownIcon className='w-6 h-6 data-open-child:rotate-180 ease-in-out duration-300' />
                 </Accordion.Trigger>
-              </Accordion.Header>
-              <Accordion.Content className="text-primary-300">
-                Yes. It adheres to the WAI-ARAI design pattern.
-              </Accordion.Content>
+              <Accordion.Content>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </Accordion.Content>
             </Accordion.Item>
-            <Accordion.Item value="item-2">
+            <Accordion.Item value="question-b">
               <Accordion.Header>
-                <Accordion.Trigger>
-                  Is it accessible?
+                <Accordion.Trigger className='flex content-between items-center w-[100%]'>
+                  <div className='flex-grow text-left'>
+                    Question B
+                  </div>
+                  <ChevronDownIcon className='w-6 h-6 data-open-child:rotate-180 ease-in-out duration-300' />
                 </Accordion.Trigger>
               </Accordion.Header>
               <Accordion.Content>
-                Yes. It adheres to the WAI-ARAI design pattern.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </Accordion.Content>
             </Accordion.Item>
           </Accordion.Root>
         </Block>
 
         <Block title="Slider">
-          <Slider.Root tw="text-gray-400" className='w-[400px]'>
+          <Slider.Root>
             <Slider.Track>
               <Slider.Range />
             </Slider.Track>
@@ -63,18 +273,24 @@ const Home: NextPage = () => {
         <Block title="Tabs">
           <Tabs.Root defaultValue='tab1'>
             <Tabs.List>
-              <Tabs.Trigger value='tab1'>Tab 1</Tabs.Trigger>
-              <Tabs.Trigger value='tab2'>Tab 2</Tabs.Trigger>
+              <Tabs.Trigger value='tab1'>Question A</Tabs.Trigger>
+              <Tabs.Trigger value='tab2'>Question B</Tabs.Trigger>
             </Tabs.List>
-            <Tabs.Content value='tab1'>Tab Content 1</Tabs.Content>
-            <Tabs.Content value='tab2'>Tab Content 2</Tabs.Content>
+            <Tabs.Content value='tab1'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </Tabs.Content>
+            <Tabs.Content value='tab2'>
+              Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </Tabs.Content>
           </Tabs.Root>
         </Block>
 
         <Block title="Dialog">
           <Dialog.Root >
             <Dialog.Trigger>
-              Dialog
+              <Button variant='primary'>
+                Dialog
+              </Button>
             </Dialog.Trigger>
             <Dialog.Portal>
               <Dialog.Overlay />
@@ -85,7 +301,9 @@ const Home: NextPage = () => {
                 <Dialog.Description>
                   Dialog Description
                 </Dialog.Description>
-                <Dialog.Close>Close</Dialog.Close>
+                <Dialog.Close>
+                  Close
+                </Dialog.Close>
               </Dialog.Content>
             </Dialog.Portal>
           </Dialog.Root>
@@ -93,7 +311,12 @@ const Home: NextPage = () => {
 
         <Block title="Tooltip">
           <Tooltip.Root>
-            <Tooltip.Trigger>Test</Tooltip.Trigger>
+            <Tooltip.Trigger asChild>
+              <Button>
+                Tooltip
+                <BeakerIcon className="h-5 w-5 ml-1"/>
+              </Button>
+            </Tooltip.Trigger>
             <Tooltip.Content>
               <Tooltip.Arrow />
               Tooltip content
@@ -103,7 +326,12 @@ const Home: NextPage = () => {
 
         <Block title="Popover">
           <Popover.Root>
-            <Popover.Trigger>Popover</Popover.Trigger>
+            <Popover.Trigger asChild>
+              <Button className="pr-2">
+                Popover
+                <ChevronDownIcon className="h-5 w-5 ml-1"/>
+              </Button>
+            </Popover.Trigger>
             <Popover.Content>
               <Popover.Arrow />
               Popover content
@@ -136,7 +364,7 @@ const Block: React.FC<BlockProps> = ({title, children}) => {
         {title}
       </h2>
       <div className="w-full h-px bg-gray-200 mt-2 mb-6" />
-      <div className="p-4 bg-gray-50 rounded-lg">
+      <div className="p-4 bg-white border border-gray-200 rounded-lg border-dashed">
         {children}
       </div>
     </div>

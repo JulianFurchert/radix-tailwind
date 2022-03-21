@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Dialog from '@radix-ui/react-Dialog';
 import { twMerge } from 'tailwind-merge'
+import { buttonClasses } from './Button'
 
 const Root: React.FC<Dialog.DialogProps> = props => {
   return <Dialog.Root {...props} />
@@ -38,7 +39,7 @@ const Description: React.FC<Dialog.DialogDescriptionProps> = props => {
 
 const Close: React.FC<Dialog.DialogCloseProps> = props => {
   const className = ''
-  return <Dialog.Close {...props} className={twMerge(className, props.className)}/>
+  return <Dialog.Close {...props} className={twMerge(buttonClasses.base, buttonClasses.default, props.className)}/>
 }
 
 

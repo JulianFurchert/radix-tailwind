@@ -12,4 +12,5 @@ const Thumb: React.FC<Switch.SwitchThumbProps> = props => {
   return <Switch.Thumb {...props} className={twMerge(className, props.className)} />
 }
 
+
 export { Root, Thumb }

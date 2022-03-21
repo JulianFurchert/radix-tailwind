@@ -2,8 +2,7 @@ import React from 'react';
 import * as Slider from '@radix-ui/react-slider';
 import { twMerge } from 'tailwind-merge'
 
-
-const Root: React.FC<Slider.SliderProps & {tw?: string}> = props => {
+const Root: React.FC<Slider.SliderProps> = props => {
   const className = 'relative flex items-center select-none touch-none data-horizontal:w-[200px] data-horizontal:h-[16px] data-vertical:w-[16px] data-vertical:h-[200px] data-vertical:flex-col'
   return <Slider.Root {...props} className={twMerge(className, props.className)} />
 }
